@@ -62,7 +62,9 @@ const generateEngineer = (engineerTitle) => {
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Id: ${engineer.getId()}</li>
             <li class="list-group-item">Email: <a href="mailto:">${engineer.getEmail()}</a></li>
-            <li class="list-group-item">GitHub: <a target="_blank" href="https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+            <li class="list-group-item">GitHub: <a target="_blank" href="https://github.com/${
+              engineer.getGithub
+            }">${engineer.getGithub}</a></li>
         </ul>
     </div>
 </div>`;
@@ -72,7 +74,7 @@ const generateEngineer = (engineerTitle) => {
 
 const generateCards = (teamArray) => {
   let cardsArray = [];
-  const managerTitle = teamArray.filte((team) => {
+  const managerTitle = teamArray.filter((team) => {
     return team.getRole() === "Manager";
   });
   const engineerTitle = (teamArray) => {
@@ -82,10 +84,10 @@ const generateCards = (teamArray) => {
     return team.getRole() === "Intern";
   };
   if (managerTitle) {
-    cardsArray.push(generateEngineer(engineerTitle));
+    cardsArray.push(generateEngineer(managerTitle));
   }
   if (engineerTitle) {
-    cardsArray.push(generateManager(managerTitle));
+    cardsArray.push(generateManager(engineerTitle));
   }
   if (inertTitle) {
     cardsArray.push(generateIntern(inertTitle));

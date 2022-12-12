@@ -127,7 +127,7 @@ class Prompt {
               this.teamArray.push(newEngineer);
               this.questions();
             });
-        } else if ((data.employee = "Intern")) {
+        } else if (data.employee === "Intern") {
           inquirer
             .prompt([
               {
@@ -165,7 +165,7 @@ class Prompt {
               this.teamArray.push(newIntern);
               this.questions();
             });
-        } else if (data.employee === "I finished entering my team info") {
+        } else if (data.employee == "I finished entering my team info") {
           const pagehtml = generateHTML(this.getTeamArray());
           fs.writeFile("./dist/index.html", pagehtml, (err) => {
             if (err) throw new Error(err);
@@ -183,5 +183,4 @@ prompt.questions();
 /**
  * List prompt example
  */
- module.exports = Prompt;
- 
+module.exports = Prompt;
