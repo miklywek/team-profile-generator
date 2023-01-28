@@ -18,6 +18,12 @@ Use inquirer from your command line to answer questions about your project.
 Here is an MP4 showing the entire process
 ![screenshot of application](/assets/img/screenshot.jpg)
 
+
+
+https://user-images.githubusercontent.com/64354412/215293643-04ccf80a-3d6f-4817-930a-deb0d94d0706.mp4
+
+
+
 ## Contributing
 
 Contributors should read the installation section.
